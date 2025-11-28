@@ -1,4 +1,4 @@
-# MANEJO DE FUNCIONES EN PYTHON 
+# MANEJO LISTAS, DICCIONARIOS Y TUPLAS EN PYTHON 
 
 """
     NOMBRE DEL ALUMNO: PAULO RAMIREZ ALVAREZ
@@ -6,6 +6,7 @@
     MATRICULA: 2530384 
     GRUPO: 1-1 IM 
 """
+
 
 """
     Problem X: 
@@ -141,6 +142,11 @@
 
 """
     REFRENCIAS:
+    1) 
+    2) 
+    3) 
+    4) 
+    5) 
 
 """
 
