@@ -279,7 +279,11 @@ else:
 """
     Problem 6: Body Mass Index (BMI) and category flag
     Description: 
-    Programa para calcular el inidice de masa corporal del usuario 
+    Programa para calcular el inidice de masa corporal del usuario al momento que
+    el usuario ingrese su peso y altura se van a operar como datos flotantes apartir 
+    de ahi con los parametro mediante boleanos se indica si sobre pasa si es muy bajo
+    o normal.  
+
     Inputs:
     - 
 
@@ -291,17 +295,47 @@ else:
 
     Test cases:
     1) Normal: 
+    
     2) Border: 
+    
     3) Error: 
 
 """
 
+try:
+    weight_kg = float(input("Enter weight in kg: "))
+    height_M = float(input("Enter height in meters: "))
+except:
+    print("Error: invalid input")
+    weight_kg = -1
+
+if weight_kg <= 0 or height_M <= 0:
+    print("Error: invalid input")
+else:
+    bmi = weight_kg / (height_M * height_M)
+    bmi_out = round(bmi, 2)
+
+    is_underweight = (bmi < 18.5)
+    is_normal = (bmi >= 18.5 and bmi < 25.0)
+    is_overweight = (bmi >= 25.0)
+
+    print("BMI:", bmi_out)
+    print("Underweight:", str(is_underweight).lower())
+    print("Normal:", str(is_normal).lower())
+    print("Overweight:", str(is_overweight).lower())
 
 
 """
     CONCLUSION:
-
-
+    Los enteros y flotantes se usan juntos en muchos cálculos reales, como salarios, 
+    promedios o intereses. Las comparaciones generan valores booleanos que permiten 
+    tomar decisiones mediante estructuras if. Validar rangos es esencial para evitar 
+    errores lógicos y prevenir situaciones críticas como dividir entre cero. Además, 
+    el uso de condiciones combinadas con and, or y not permite crear reglas más precisas 
+    y adaptadas a diferentes casos. Estos mismos patrones aparecen en problemas de nómina, 
+    descuentos, préstamos y cualquier situación donde intervengan números y reglas de decisión. 
+    En conjunto, aprender cómo interactúan estos elementos ayuda a construir programas más 
+    seguros y confiables.
 """
 
 

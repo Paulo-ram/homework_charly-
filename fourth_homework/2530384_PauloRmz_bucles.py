@@ -7,9 +7,14 @@
     GRUPO: 1-1 IM 
 """
 
+"""
+    RESUMEN EJECUTIVO: 
 
 """
-    Problem X: 
+
+
+"""
+    Problem 1: 
     Description: 
 
     Inputs:
@@ -29,49 +34,7 @@
 """
 
 """
-    Problem X: 
-    Description: 
-
-    Inputs:
-    - 
-
-    Outputs:
-    - 
-
-    Validations:
-    - 
-
-    Test cases:
-    1) Normal: 
-    2) Border: 
-    3) Error: 
-
-"""
-
-
-"""
-    Problem X: 
-    Description: 
-
-    Inputs:
-    - 
-
-    Outputs:
-    - 
-
-    Validations:
-    - 
-
-    Test cases:
-    1) Normal: 
-    2) Border: 
-    3) Error: 
-
-"""
-
-
-"""
-    Problem X: 
+    Problem 2: 
     Description: 
 
     Inputs:
@@ -92,7 +55,7 @@
 
 
 """
-    Problem X: 
+    Problem 3: 
     Description: 
 
     Inputs:
@@ -113,7 +76,49 @@
 
 
 """
-    Problem X: 
+    Problem 4: 
+    Description: 
+
+    Inputs:
+    - 
+
+    Outputs:
+    - 
+
+    Validations:
+    - 
+
+    Test cases:
+    1) Normal: 
+    2) Border: 
+    3) Error: 
+
+"""
+
+
+"""
+    Problem 5: 
+    Description: 
+
+    Inputs:
+    - 
+
+    Outputs:
+    - 
+
+    Validations:
+    - 
+
+    Test cases:
+    1) Normal: 
+    2) Border: 
+    3) Error: 
+
+"""
+
+
+"""
+    Problem 6: 
     Description: 
 
     Inputs:
