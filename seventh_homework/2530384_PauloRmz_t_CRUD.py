@@ -1,4 +1,4 @@
-# PROBLEMA UNICO DE PYTHON SERIE FIBONACCI 
+# PROBLEMA UNICO CRUD EN PYTHON
 
 """
     NOMBRE DEL ALUMNO: PAULO RAMIREZ ALVAREZ
@@ -8,9 +8,14 @@
 """
 
 """
-    Problem X: 
-    Description: 
+    RESUMEN EJECUTIVO: 
 
+"""
+
+"""
+    PROBLEM : CRUD manager using dictionaries and/or lists with functions.
+    Description: 
+    
     Inputs:
     - 
 

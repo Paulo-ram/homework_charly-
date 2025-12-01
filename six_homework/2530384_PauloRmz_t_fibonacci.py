@@ -1,4 +1,4 @@
-# PROBLEMA UNICO CRUD EN PYTHON
+# PROBLEMA UNICO DE PYTHON SERIE FIBONACCI 
 
 """
     NOMBRE DEL ALUMNO: PAULO RAMIREZ ALVAREZ
@@ -7,9 +7,14 @@
     GRUPO: 1-1 IM 
 """
 
+"""
+    REUMEN EJECUTIVO: 
 
 """
-    Problem X: 
+
+
+"""
+    PROBLEM : Fibonacci series up to n terms
     Description: 
 
     Inputs:

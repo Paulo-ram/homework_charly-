@@ -177,18 +177,9 @@
     Problem 6: Simple contact book
     Description: 
     Se tiene como objetivo implementar un mini libro de contactos con ayuda de un diccionario
-    tiene que tener el nombre del contacto y su telefono 
-    Implementa un mini "contact book" usando un diccionario donde:
-    - clave: nombre de contacto (string)
-    - valor: número de teléfono (string)
-    El programa debe:
-    1) Crear un diccionario inicial con algunos contactos.
-    2) Leer una acción action_text ("ADD", "SEARCH" o "DELETE").
-    3) Según la acción:
-    - "ADD": lee name y phone, agrega o actualiza el contacto.
-    - "SEARCH": lee name y muestra el teléfono si existe.
-    - "DELETE": lee name y elimina el contacto si existe.
-    4) Mostrar un mensaje indicando el resultado de la operación.
+    tiene que tener el nombre del contacto y su telefono. Se tiene que leer una accion son tres
+    add, search y delete en si agregar buscar y eliminar y mostrar un mensaje de resultado 
+    dependiendo de la operacion que el usuario desea realizar. 
 
     Inputs:
     - 
@@ -209,7 +200,15 @@
 
 """
     CONCLUSION:
-
+    Las listas, tuplas y diccionarios se usan según la necesidad: las listas son útiles cuando 
+    requieres almacenar datos que cambiarán, porque permiten agregar, eliminar o modificar 
+    elementos con mucha flexibilidad. En cambio, las tuplas son convenientes cuando necesitas 
+    garantizar que los datos permanezcan fijos, como coordenadas, configuraciones o valores que 
+    no deben alterarse. Los diccionarios resultan muy prácticos cuando necesitas hacer búsquedas 
+    rápidas usando claves, ya que permiten acceder a la información de manera directa sin recorrer 
+    toda la estructura. Al combinar estas estructuras aparecen patrones comunes, como diccionarios 
+    que guardan listas o listas de diccionarios, lo cual facilita organizar información compleja de 
+    forma ordenada y eficiente.
 
 """
 
