@@ -12,6 +12,11 @@
 
 """
 
+"""
+    BUENAS PRACTICAS: 
+    
+
+"""
 
 """
     Problem 1: 

@@ -176,7 +176,8 @@
 """
     Problem 6: Simple contact book
     Description: 
-    
+    Se tiene como objetivo implementar un mini libro de contactos con ayuda de un diccionario
+    tiene que tener el nombre del contacto y su telefono 
     Implementa un mini "contact book" usando un diccionario donde:
     - clave: nombre de contacto (string)
     - valor: número de teléfono (string)
