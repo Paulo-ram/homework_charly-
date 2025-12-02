@@ -12,16 +12,16 @@
 
 """
 
-
+print("---------------FIBONACCI SERIES-------------------")
 """
     PROBLEM : Fibonacci series up to n terms
     Description: 
 
     Inputs:
-    - 
+    - num 
 
     Outputs:
-    - 
+    - sum 
 
     Validations:
     - 
@@ -32,6 +32,26 @@
     3) Error: 
 
 """
+
+print("Welcome to the fibonacci sequence")
+try: 
+    num = int(input("How many values do you want?: "))
+    if num>1 and num<35:
+        a = 0
+        b = 1
+        sum = 0 
+        count = 1
+        print("This is the fibonacci serie")
+        while(count<=num):
+            print(sum)
+            count+=1
+            a=b
+            b=sum
+            sum=a+b
+    else:
+        print(ValueError)
+except: 
+    print(ValueError) 
 
 
 """

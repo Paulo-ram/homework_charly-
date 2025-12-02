@@ -45,7 +45,7 @@
 
 """
 
-
+print("---------------FIRST PROBLEM-------------------")
 """
     Problem 1: Shopping list basics 
     Description: 
@@ -71,6 +71,7 @@
 
 """
 
+print("---------------SECOND PROBLEM-------------------")
 """
     Problem 2: Points and distances with tuples 
     Description: 
@@ -94,7 +95,7 @@
 
 """
 
-
+print("---------------THIRD PROBLEM-------------------")
 """
     Problem 3: Product catalog with dictionary
     Description:
@@ -121,7 +122,7 @@
 
 """
 
-
+print("---------------FOURTH PROBLEM-------------------")
 """
     Problem 4: Student grades with dict and list
     Description: 
@@ -147,7 +148,7 @@
 
 """
 
-
+print("---------------FIFTH PROBLEM-------------------")
 """
     Problem 5: Word frequency counter
     Description: 
@@ -172,7 +173,7 @@
 
 """
 
-
+print("---------------SIXTH PROBLEM-------------------")
 """
     Problem 6: Simple contact book
     Description: 

@@ -77,7 +77,7 @@
      ======================================================================
 """
 
-
+print("---------------FIRST PROBLEM-------------------")
 """
     Problem 1: FULL NAME FORMATTER 
     Description: 
@@ -115,30 +115,30 @@
 
     Error: invalid input. No blank spaces allowed.
 """
-# the user enters their name
+# INPUT THE NAME 
 full_name = input("Enter yotu full name please: ")
 
-# validate full name solo si contiene espacios 
+# VALIDATE THE FULL NAME 
 if full_name.strip() == "":
 
-    # print error for empty input
+    # PRINT ERROR EMPTY 
     print("Error: invalid input. No blank spaces allowed.")
 elif len(full_name.strip()) < 2:
 
-    # print error for insufficient words 
+    # PRINT ERROR NO MANI CARACTERS 
     print("Error: invalid input. It cannot be less than two words.")
 else:
-    # Clean and standardize the text
+    # CLEAN THE NAME 
     formatted_name = " ".join(full_name.strip().title().split())
     
-    # generate initials
+    # GENERATE THE OUTPODS
     initials = ".".join([part[0].upper() for part in formatted_name.split()]) + '.'
     
     print(f"Formatted name: {formatted_name}")
     print(f"Initials: {initials}")
 
 
-
+print("---------------SECOND PROBLEM-------------------")
 """
     Problem 2: E-MAIL VALIDATOR 
     Description:
@@ -178,36 +178,36 @@ else:
 
 """
 
-# input email
+# INPUT 
 email = input("Enter email address: ")
 
-# validate email structure
+# VALID THE EMAIL 
 if email.strip() == "":
 
-    # print error for empty input 
+    # PRINT ERROR NO EMPTY 
     print("Error: invalid input. You cannot enter only spaces.")
 elif email.count('@') != 1 or " " in email:
 
-    # print invalid email
+    # PRINT NO VALID EMAIL 
     print("Valid email: false") 
 else:
 
-    # split email into parts
+    # SPLIT THE EMAIL 
     part1, part2 = email.split("@")
 
-    # validate domain part
+    # VALIDATE THE DOMAIN 
     if "." in part2:
 
-        # outpods
+        # OUTPODS 
         print("Valid email: true")
         print(f"Domain: {part2}")
     else:
 
-        # print invalid email
+        # PRINT THE INVALID EMAIL 
         print("Valid email: false")
 
 
-
+print("---------------THIRD PROBLEM-------------------")
 """
     Problem 3: Palindrome checker
     Description: 
@@ -243,26 +243,27 @@ else:
     Error: invalid input. You cannot enter only spaces.
 """
 
-# input phrase
+# INPUT
 phrase = input("Enter a phrase: ")
 
-# validate phrase
+# VALIDATE PHRASE 
 if phrase.strip() == "":
 
-    # print error for empty input
+    # PRINT ERROR EMPTY VALUE 
     print("Error: invalid input. You cannot enter only spaces.")   
 else:
 
-    # normalize phrase
+    # NORMALIZE 
     normal_phrase = "".join(phrase.strip().lower().split())
     
-    # check if palindrome
+    # CHECK THE PALINDROME 
     palindrome = normal_phrase == normal_phrase[::-1]
     
-    # outputs 
+    # OUTPODS 
     print("Is palindrome:" + str(palindrome))
     print(f"Normalized phrase: {normal_phrase}")
 
+print("---------------FOURTH PROBLEM-------------------")
 """
     Problem 4: Sentence word stats 
     Description: 
@@ -307,30 +308,31 @@ else:
 
 """
 
-# input sentence
+# INPUT
 sentence = input("Enter a sentence: ")
 
-# validate sentence
+# VALIDATE THE SENTENCE 
 if sentence.strip() == "":
 
-    # print error for empty input
+    # PRINT THE ERROR 
     print("Error: invalid input. You cannot enter only spaces.")
 
 else:
 
-    # normalize sentence
+    # NORMALIZED 
     normal_sentense = sentence.strip()
 
-    # separate 
+    # CUT THE SENTENSE 
     words = normal_sentense.split()
 
-    # outpods 
+    # PRINT THE RESULTS 
     print("Word count:"+ str(len(words)))
     print("Frist word:"+ words[0])
     print("Last word:"+ words[-1])
     print("Shortest word:"+ min(words, key=len))
     print("Longest word:"+ max(words, key=len))
 
+print("---------------FIFTH PROBLEM-------------------")
 """
     Problem 5: Password strength classifier
     Description: 
@@ -360,13 +362,13 @@ else:
 
 """
 
-# input password
+# INPUT 
 password = (input("Enter a password: "))
 password.strip()
 
 if password == "":
 
-    # print error for empty input
+    # PRINT THE ERROR NO EMPTY VALUES 
     print("Error: invalid input. You cannot enter only spaces.")
 elif len(password) < 8 and password.islower() or password.isdigit():
     print("Password strength: weak") #outpod
@@ -376,9 +378,11 @@ elif len(password) >= 8 and any(password.islower()
             for c in password) and any(not c.isalnum() 
                 for c in password):
     print("Password strength: Strong")
-else: # outpod
+else: # OUTPOD
     print("Password strength: Medium")
-        # out pod 
+        # OUT POD 
+
+print("---------------SIXTH PROBLEM-------------------")
 """
     Problem 6: Product label formatter
     Description: 
@@ -423,7 +427,7 @@ else: # outpod
 
 
 """
-
+#BECOME STRING THE PRICE 
 product_name = input("name product :")
 price_value = (str(input("price product :")))
 
@@ -434,7 +438,7 @@ else:
         price_float = float(price_value)
         if price_float < 0:
             raise ValueError("Negative price")
-        
+        # VALIDATE 
         label = f"{product_name.strip():.<20}${price_float:>7.2f}"
         # outpods 
         print(f"Product: {product_name}")
@@ -442,7 +446,7 @@ else:
         print(f'Label: "{label}"')
     except ValueError:
         print("Error: invalid input. The price must be a positive number.")
-
+# PRINT THE VALUE NO NEGATIVE PRICES 
 """
     CONCLUSION:
     La verdad me quedo mucho con la importancia de los string para procesar correctamente 

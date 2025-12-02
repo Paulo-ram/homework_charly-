@@ -31,8 +31,9 @@
     nombres descriptivos como calculate_bmi o get_total_price ayuda a entender el código sin esfuerzo.
 """
 
+print("---------------FIRST PROBLEM-------------------")
 """
-    Problem 1: 
+    Problem 1: Rectangle area and perimeter 
     Description: 
 
     Inputs:
@@ -51,8 +52,9 @@
 
 """
 
+print("---------------SECOND PROBLEM-------------------")
 """
-    Problem 2: 
+    Problem 2: Grade classifier 
     Description: 
 
     Inputs:
@@ -71,9 +73,9 @@
 
 """
 
-
+print("---------------THIRD PROBLEM-------------------")
 """
-    Problem 3: 
+    Problem 3: List statistics function 
     Description: 
 
     Inputs:
@@ -92,9 +94,9 @@
 
 """
 
-
+print("---------------FOURTH PROBLEM-------------------")
 """
-    Problem 4: 
+    Problem 4: Apply discount list 
     Description: 
 
     Inputs:
@@ -113,9 +115,9 @@
 
 """
 
-
+print("---------------FIFTH PROBLEM-------------------")
 """
-    Problem 5: 
+    Problem 5: Greeting functions with default parametres 
     Description: 
 
     Inputs:
@@ -134,9 +136,9 @@
 
 """
 
-
+print("---------------SIXTH PROBLEM-------------------")
 """
-    Problem 6: 
+    Problem 6: Factorial function 
     Description: 
 
     Inputs:

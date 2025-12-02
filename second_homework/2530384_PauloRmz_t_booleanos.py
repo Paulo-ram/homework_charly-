@@ -35,6 +35,7 @@
 
 """
 
+print("---------------FIRST PROBLEM-------------------")
 """
     Problem 1: Temperature converter and range flag  
     Description: 
@@ -42,11 +43,14 @@
     (la cual es flotante) a Fahrenheit y Kelvin. Ademas se proporciona un dato 
     en booleano (true or false) que sea true si la temperatura ingresada es mayor 
     o igual a 30 y false si no es el caso.
+
     Inputs:
-    - 
+    - tempu_C
 
     Outputs:
-    - 
+    - temp_F
+    - temp_K
+    - booleano = is_high_temperature 
 
     Validations:
     - 
@@ -57,27 +61,28 @@
     3) Error: 
 
 """
-
+# TEMPS IN FLOAT 
 try:
-    temp_c = float(input("Enter temperature in Celsius: "))
+    temp_C = float(input("Enter temperature in Celsius: "))
 except:
     print("Error: invalid input")
-    temp_c = None
-
-if temp_c is not None:
-    temp_k = temp_c + 273.15
-
-    if temp_k < 0:
+    temp_C = None
+# PRINT THE ERROR 
+if temp_C is not None:
+    temp_K = temp_C + 273.15
+# VALIDS TEMPERATURES 
+    if temp_K < 0:
         print("Error: invalid input")
     else:
-        temp_f = temp_c * 9/5 + 32
-        is_high_temperature = (temp_c >= 30.0)
+        temp_F = temp_C * 9/5 + 32
+        is_high_temperature = (temp_C >= 30.0)
 
-        print("Fahrenheit:", temp_f)
-        print("Kelvin:", temp_k)
+        print("Fahrenheit:", temp_F)
+        print("Kelvin:", temp_K)
         print("High temperature:", str(is_high_temperature).lower())
 
 
+print("---------------SECOND PROBLEM-------------------")
 """
     Problem 2:  Work hours and overtime payment
     Description: 
@@ -87,10 +92,13 @@ if temp_c is not None:
     para indicar si hay horas extra o no.
 
     Inputs:
-    - 
+    - work_hours
+    - hourly_rate 
 
     Outputs:
-    - 
+    - regular_pay
+    - overtime_pay
+    - total_pay 
 
     Validations:
     - 
@@ -101,7 +109,7 @@ if temp_c is not None:
     3) Error: 
 
 """
-
+# HOURS IN FLOAT AND THE RATE 
 try:
     work_hours = float(input("Enter worked hours: "))
     hourly_rate = float(input("Enter hourly rate: "))
@@ -109,13 +117,13 @@ except:
     print("Error: invalid input")
     work_hours = -1
     hourly_rate = -1
-
+# NO NEGATIVE NUMBERS 
 if work_hours < 0 or hourly_rate <= 0:
     print("Error: invalid input")
 else:
     regular_hours = min(work_hours, 40)
     overtime_hours = max(work_hours - 40, 0)
-
+# CALCULATE 
     regular_pay = regular_hours * hourly_rate
     overtime_pay = overtime_hours * hourly_rate * 1.5
     total_pay = regular_pay + overtime_pay
@@ -128,7 +136,7 @@ else:
     print("Has overtime:", str(has_overtime).lower())
 
 
-
+print("---------------THIRD PROBLEM-------------------")
 """
     Problem 3: Discount eligibility with booleans
     Description: 
@@ -137,10 +145,11 @@ else:
     1000.0 en productos. Tambien tiene descuento si es estudiante o senior.
 
     Inputs:
-    - 
+    - purchase_total
 
     Outputs:
-    - 
+    - discount_eligible
+    - final_total 
 
     Validations:
     - 
@@ -154,6 +163,7 @@ else:
 
 """
 
+# TOTAL IN FLOAT AND NO LETTERS
 try:
     purchase_total = float(input("Enter purchase total: "))
 except:
@@ -162,11 +172,12 @@ except:
 
 is_student_text = input("Is the customer a student? (YES/NO): ").upper()
 is_senior_text = input("Is the customer a senior? (YES/NO): ").upper()
-
+# NO NEGATIVE 
 if purchase_total < 0:
     print("Error: invalid input")
 elif is_student_text not in ("YES", "NO") or is_senior_text not in ("YES", "NO"):
     print("Error: invalid input")
+# VALID THE INPUT IS CORRECT 
 else:
     is_student = (is_student_text == "YES")
     is_senior = (is_senior_text == "YES")
@@ -175,16 +186,17 @@ else:
         is_student or
         is_senior or
         (purchase_total >= 1000.0))
-
+    # KWON IF THE CLIENT IS GOOD FOR THIS 
     if discount_eligible:
         final_total = purchase_total * 0.9
     else:
         final_total = purchase_total
-
+        # PRINT THE OUTPODS 
     print("Discount eligible:", str(discount_eligible).lower())
     print("Final total:", final_total)
 
 
+print("---------------FOURTH PROBLEM-------------------")
 """
     Problem 4: Basic statistics of three integers
     Description: 
@@ -193,10 +205,16 @@ else:
     es que los tres numeros son pares. 
     
     Inputs:
-    - 
+    - n1
+    - n2 
+    - n3 
 
     Outputs:
-    - 
+    - sum_value 
+    - average_value 
+    - max_value
+    - min_value
+    - all_evem
 
     Validations:
     - 
@@ -207,7 +225,7 @@ else:
     3) Error: 
 
 """
-
+# NUMBERS INT 
 try:
     n1 = int(input("Enter integer 1: "))
     n2 = int(input("Enter integer 2: "))
@@ -215,7 +233,7 @@ try:
 except:
     print("Error: invalid input")
     n1 = n2 = n3 = None
-
+# ERROR TO FLOATS OR LETTERS 
 if n1 is None:
     pass
 else:
@@ -224,13 +242,14 @@ else:
     max_value = max(n1, n2, n3)
     min_value = min(n1, n2, n3)
     all_even = (n1 % 2 == 0 and n2 % 2 == 0 and n3 % 2 == 0)
-
+# CALCULATE AND PRINT THE RESULTS 
     print("Sum:", sum_value)
     print("Average:", average_value)
     print("Max:", max_value)
     print("Min:", min_value)
     print("All even:", str(all_even).lower())
 
+print("---------------FIFTH PROBLEM-------------------")
 """
     Problem 5: Loan eligibility
     Description: 
@@ -240,10 +259,13 @@ else:
     para ser elegible.
 
     Inputs:
-    - 
+    - monthly_income
+    - monthly_debt
+    - credit_score 
 
     Outputs:
-    - 
+    - debt_ratio
+    - eligible 
 
     Validations:
     - 
@@ -254,7 +276,7 @@ else:
     3) Error: 
 
 """
-
+# BECOME THE INPUTS FLOATS OR INT 
 try:
     monthly_income = float(input("Enter monthly income: "))
     monthly_debt = float(input("Enter monthly debt: "))
@@ -262,7 +284,7 @@ try:
 except:
     print("Error: invalid input")
     monthly_income = -1
-
+# PRINT THE ERROR IN THE CASES 
 if monthly_income <= 0 or monthly_debt < 0 or credit_score < 0:
     print("Error: invalid input")
 else:
@@ -275,7 +297,9 @@ else:
 
     print("Debt ratio:", debt_ratio)
     print("Eligible:", str(eligible).lower())
+# PRINT THE RESULTS 
 
+print("---------------SIXTH PROBLEM-------------------")
 """
     Problem 6: Body Mass Index (BMI) and category flag
     Description: 
@@ -285,10 +309,16 @@ else:
     o normal.  
 
     Inputs:
-    - 
+    - weigth_kg
+    - heigth_M
 
     Outputs:
-    - 
+    - bmi_out
+    - boolean = (
+            is_underweigth,
+            is_normal,
+            is_overweigth
+            )
 
     Validations:
     - 

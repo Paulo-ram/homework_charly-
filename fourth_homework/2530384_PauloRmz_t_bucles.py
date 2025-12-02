@@ -38,6 +38,7 @@
     mantenimiento del código.
 """
 
+print("---------------FIRST PROBLEM-------------------")
 """
     Problem 1: Sum of range with for 
     Description: 
@@ -61,6 +62,7 @@
 
 """
 
+print("---------------SECOND PROBLEM-------------------")
 """
     Problem 2: Multiplication table with for 
     Description: 
@@ -84,7 +86,7 @@
 
 """
 
-
+print("---------------THIRD PROBLEM-------------------")
 """
     Problem 3: Average of numbers with while and sentinel
     Description: 
@@ -109,7 +111,7 @@
 
 """
 
-
+print("---------------FOURTH PROBLEM-------------------")
 """
     Problem 4: Password attempts with while
     Description:
@@ -133,7 +135,7 @@
 
 """
 
-
+print("---------------FIFTH PROBLEM-------------------")
 """
     Problem 5: Simple menu with while
     Description:
@@ -158,7 +160,7 @@
 
 """
 
-
+print("---------------SIXTH PROBLEM-------------------")
 """
     Problem 6: Pattern printing with nested loops
     Description: 
