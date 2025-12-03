@@ -100,7 +100,7 @@ except:
 
 
 """
-    REFRENCIAS:
+    REFERENCIAS:
     1) Real Python. (2023). How to Generate the Fibonacci Sequence in Python.
     https://realpython.com/fibonacci-sequence-python/
     2) Real Python. (2023). How to Generate the Fibonacci Sequence in Python.

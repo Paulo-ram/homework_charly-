@@ -542,7 +542,7 @@ else:
 
 
 """
-    REFRENCIAS:
+    REFERENCIAS:
     1) Python Software Foundation. (2024). List — Sequence Type.
     https://docs.python.org/3/tutorial/introduction.html#lists
     2) Python Software Foundation. (2024). Mutable Sequence Types — list.

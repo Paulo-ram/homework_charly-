@@ -52,7 +52,7 @@ print("---------------CRUD PROBLEM-------------------")
 
 
 """
-    REFRENCIAS:
+    REFERENCIAS:
     1) Real Python. (2024). Using SQLite Databases in Python.
     (Contiene ejemplos CRUD completos)
     https://realpython.com/python-sqlite-sql-databases/

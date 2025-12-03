@@ -476,7 +476,7 @@ else:
 
 
 """
-    REFRENCIAS:
+    REFERENCIAS:
     1) W3Schools – Python Strings-https://www.w3schools.com/python/python_strings.asp
     2) RealPython – Guía completa de Strings-Real Python. (2024). Strings and Character Data in Python.
     https://realpython.com/python-strings/

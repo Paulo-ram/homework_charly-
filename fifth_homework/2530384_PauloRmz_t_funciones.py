@@ -470,7 +470,7 @@ except:
 
 
 """
-    REFRENCIAS:
+    REFERENCIAS:
     1) Python Software Foundation. (2024). User-Defined Functions.
     https://docs.python.org/3/reference/compound_stmts.html#function-definitions
     2) Python Software Foundation. (2024). 4.6. Defining Functions.

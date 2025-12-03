@@ -495,7 +495,7 @@ else:
 """
 
 """
-    REFRENCIAS:
+    REFERENCIAS:
     1) Python Software Foundation. (2024). Numeric Types — int, float, complex.
     https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex
     2) Python Software Foundation. (2024). math — Mathematical functions.

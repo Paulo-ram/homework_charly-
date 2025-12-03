@@ -441,7 +441,7 @@ for i in range(1, n + 1):
 
 
 """
-    REFRENCIAS:
+    REFERENCIAS:
     1) Python Software Foundation. (2024). The for statement.
     https://docs.python.org/3/reference/compound_stmts.html#the-for-statement
     2) Python Software Foundation. (2024). The while statement.
