@@ -146,9 +146,9 @@ print("---------------SECOND PROBLEM-------------------")
     que si sea un email mediante el signo "@" y el "." tambien proporcionar el dominio 
     del correo. 
 
-
     Inputs:
     - email
+
     Outputs:
     - valid or not 
     - part2 (domain)
@@ -217,6 +217,7 @@ print("---------------THIRD PROBLEM-------------------")
 
     Inputs:
     - phrase 
+
     Outputs:
     - palindrome
     - normal_phrase 
@@ -272,10 +273,14 @@ print("---------------FOURTH PROBLEM-------------------")
     palabra y la palabra mas corta y larga.
 
     Inputs:
-    - 
+    - sentence 
 
     Outputs:
-    - 
+    - print("Word count:"+ str(len(words)))
+    - print("Frist word:"+ words[0])
+    - print("Last word:"+ words[-1])
+    - print("Shortest word:"+ min(words, key=len))
+    - print("Longest word:"+ max(words, key=len)) 
 
     Validations:
     - La oracion no debe de estar vacio tras usar .strip()
@@ -354,11 +359,19 @@ print("---------------FIFTH PROBLEM-------------------")
 
     Test cases:
     1) Normal: 
+    Enter a password: Abc123!@
+
+    Password strength: Strong
 
     2) Border: 
+    Enter a password: ABCD1234
+
+    Password strength: Medium
 
     3) Error: 
+    Enter a password:     
 
+    Error: invalid input. You cannot enter only spaces.
 
 """
 
@@ -464,14 +477,17 @@ else:
 
 """
     REFRENCIAS:
-    1) 
-    2) 
-    3) 
-    4) 
-    5) 
+    1) W3Schools – Python Strings-https://www.w3schools.com/python/python_strings.asp
+    2) RealPython – Guía completa de Strings-Real Python. (2024). Strings and Character Data in Python.
+    https://realpython.com/python-strings/
+    3) GeeksforGeeks – Python Strings- https://www.geeksforgeeks.org/python-strings/ 
+    4) Python Software Foundation. (2024). Text Sequence Type — str.
+    https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
+    5) Python Software Foundation. (2024). String Methods.
+    https://docs.python.org/3/library/stdtypes.html#string-methods
 """
 
 """
     REPOSITORIO GIT HUB:
-
+    https://github.com/Paulo-ram/homework_charly-
 """

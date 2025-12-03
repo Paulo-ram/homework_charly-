@@ -47,20 +47,56 @@ print("---------------FIRST PROBLEM-------------------")
     "n" mayor o igual que 1 porque si no no jala el codigo,
 
     Inputs:
-    - 
+    - n_input
 
     Outputs:
-    - 
+    - total_sum
+    - even_sum 
 
     Validations:
-    - 
+    - Verificar que n pueda convertirse a int.
+    - n >= 1; si no se cumple, mostrar "Error: invalid input".
 
     Test cases:
     1) Normal: 
-    2) Border: 
-    3) Error: 
+    5
 
+    Sum 1..n: 15
+    Even sum 1..n: 6
+
+    2) Border: 
+    1
+
+    Sum 1..n: 1
+    Even sum 1..n: 0
+
+    3) Error: 
+    hola
+
+    Error: invalid input
 """
+
+n_input = input("Enter n: ")
+
+try:
+    n = int(n_input)
+    if n < 1:
+        print("Error: invalid input")
+    else:
+        total_sum = 0
+        even_sum = 0
+
+        for i in range(1, n + 1):
+            total_sum = total_sum + i
+
+            if i % 2 == 0:
+                even_sum = even_sum + i
+
+        print("Sum 1..n:", total_sum)
+        print("Even sum 1..n:", even_sum)
+except ValueError:
+    print("Error: invalid input")
+
 
 print("---------------SECOND PROBLEM-------------------")
 """
@@ -71,20 +107,56 @@ print("---------------SECOND PROBLEM-------------------")
     lo vea con ayuda del bucle. 
 
     Inputs:
-    - 
+    - base_input
+    - m_input
 
     Outputs:
-    - 
+    - base
+    - i
+    - result
 
     Validations:
-    - 
+    - base y m convertibles a int.
+    - m >= 1; si no, "Error: invalid input".
 
     Test cases:
     1) Normal: 
-    2) Border: 
-    3) Error: 
+    Enter base: 5
+    Enter limit m: 4
 
+    5 x 1 = 5
+    5 x 2 = 10
+    5 x 3 = 15
+    5 x 4 = 20
+
+    2) Border: 
+    Enter base: 7
+    Enter limit m: 1
+
+    7 x 1 = 7
+
+    3) Error: 
+    Enter base: hola
+    Enter limit m: 5
+
+    Error: invalid input
 """
+
+base_input = input("Enter base: ")
+m_input = input("Enter limit m: ")
+
+try:
+    base = int(base_input)
+    m = int(m_input)
+    if m < 1:
+        print("Error: invalid input")
+  
+    for i in range(1, m + 1):
+        result = base * i
+        print(f"{base} x {i} = {result}")
+except:
+    print("Error: invalid input")
+
 
 print("---------------THIRD PROBLEM-------------------")
 """
@@ -96,20 +168,64 @@ print("---------------THIRD PROBLEM-------------------")
     sea valido se muestra error.
 
     Inputs:
-    - 
+    - value_input 
 
     Outputs:
-    - 
+    - count
+    - average
+    - total 
 
     Validations:
-    - 
+    - Cada lectura debe intentar convertirse a float.
+    - Ignorar el sentinela en los cálculos.
+
 
     Test cases:
     1) Normal: 
-    2) Border: 
-    3) Error: 
+    Enter number (-7 to stop): 5
+    Enter number (-7 to stop): 3
+    Enter number (-7 to stop): 2
+    Enter number (-7 to stop): -7
 
+    Count: 3
+    Average: 3.3333333333333335
+
+    2) Border: 
+    Enter number (-7 to stop): -7
+
+    Error: no data
+
+    3) Error: 
+    Enter number (-7 to stop): hola
+
+    Error: invalid input
 """
+
+SENTINEL = -7
+count = 0
+total = 0.0
+
+while True:
+    value_input = input("Enter number (-7 to stop): ")
+
+    try:
+        number = float(value_input)
+    except:
+        print("Error: invalid input")
+        continue 
+
+    if number == SENTINEL:
+        break  
+    total += number
+    count += 1
+
+if count == 0:
+    print("Error: no data")
+else:
+    average = total / count
+    print("Count:", count)
+    print("Average:", average)
+
 
 print("---------------FOURTH PROBLEM-------------------")
 """
@@ -120,20 +236,58 @@ print("---------------FOURTH PROBLEM-------------------")
     y excede los intentos mostrar un mensaje de bloqueo. 
 
     Inputs:
-    - 
-
+    - password
     Outputs:
-    - 
+    - login success
+    - account locked
 
     Validations:
-    - 
+    - MAX_ATTEMPTS > 0 (definido como constante en el código, por ejemplo 3).
+    - Contar correctamente los intentos.
+
 
     Test cases:
     1) Normal: 
-    2) Border: 
-    3) Error: 
+    Enter password: hola
+    Enter password: 1234
+    Enter password: Thepapus
 
+    Login success
+    2) Border: 
+    Enter password: x
+    Enter password: y
+    Enter password: z
+    Enter password: Thepapus
+
+    Login success
+
+    3) Error: 
+    Enter password: 111
+    Enter password: 222
+    Enter password: 333
+    Enter password: 444
+
+    Account locked
 """
+
+CORRECT_PASSWORD = "Thepapus"
+MAX_ATTEMPTS = 4
+
+attempts = 0
+success = False
+
+while attempts < MAX_ATTEMPTS:
+    password = input("Enter password: ")
+
+    if password == CORRECT_PASSWORD:
+        print("Login success")
+        success = True
+        break
+    else:
+        attempts += 1
+
+if not success:
+    print("Account locked")
 
 print("---------------FIFTH PROBLEM-------------------")
 """
@@ -145,20 +299,73 @@ print("---------------FIFTH PROBLEM-------------------")
     mostrar el meno hasta que se ingrese la opcion de salida.
 
     Inputs:
-    - 
+    - option_input
 
     Outputs:
-    - 
+    -1) Show greeting
+    2) Show current counter value
+    3) Increment counter
+    0) Exit
 
     Validations:
-    - 
+    - Normalizar option (por ejemplo, convertir a int con manejo de error).
+    - Asegurar que sólo 0,1,2,3 sean aceptadas como válidas.
+
 
     Test cases:
     1) Normal: 
-    2) Border: 
-    3) Error: 
+    Choose an option: 1
+    Choose an option: 3
+    Choose an option: 2
+    Choose an option: 0
 
+    Hi!
+    Counter incremented by 1
+    Counter: 1
+    Say goodbye my boy
+
+    2) Border: 
+    Choose an option: 2
+    Choose an option: 0
+
+    Counter: 0
+    Say goodbye my boy
+
+    3) Error: 
+    Choose an option: hola
+
+    Error: invalid option
 """
+
+counter = 0
+
+while True:
+    print("1) Show greeting")
+    print("2) Show current counter value")
+    print("3) Increment counter")
+    print("0) Exit")
+
+    option_input = input("Choose an option: ")
+
+    try:
+        option = int(option_input)
+    except:
+        print("Error: invalid option")
+        continue
+
+    if option == 1:
+        print("Hi!")
+    elif option == 2:
+        print("Counter:", counter)
+    elif option == 3:
+        counter += 1
+        print("Counter incremented by 1") 
+    elif option == 0:
+        print("Say goodbye my boy")
+        break
+    else:
+        print("Error: invalid option")
+
 
 print("---------------SIXTH PROBLEM-------------------")
 """
@@ -169,21 +376,58 @@ print("---------------SIXTH PROBLEM-------------------")
     segundo patron invertido.
 
     Inputs:
-    - 
+    - n_input
 
     Outputs:
-    - 
+    - line 
 
     Validations:
-    - 
+    - n convertible a int.
+    - n >= 1; si no, "Error: invalid input".
 
     Test cases:
     1) Normal: 
-    2) Border: 
-    3) Error: 
+    Enter n: 4
 
+    *
+    *
+    **
+    *
+    **
+    ***
+    *
+    **
+    ***
+    ****
+
+    2) Border: 
+    Enter n: 1
+
+    *
+
+    3) Error: 
+    Enter n: hola
+
+    Error: invalid input
 """
 
+n_input = input("Enter n: ")
+
+try:
+    n = int(n_input)
+except:
+    print("Error: invalid input")
+    exit()
+
+if n < 1:
+    print("Error: invalid input")
+    exit()
+
+for i in range(1, n + 1):
+    line = ""
+    for j in range(i):
+        line += "*"
+        print(line)
 
 """
     CONCLUSION:
@@ -198,14 +442,19 @@ print("---------------SIXTH PROBLEM-------------------")
 
 """
     REFRENCIAS:
-    1) 
-    2) 
-    3) 
-    4) 
-    5) 
+    1) Python Software Foundation. (2024). The for statement.
+    https://docs.python.org/3/reference/compound_stmts.html#the-for-statement
+    2) Python Software Foundation. (2024). The while statement.
+    https://docs.python.org/3/reference/compound_stmts.html#the-while-statement
+    3) Python Software Foundation. (2024). 4. More Control Flow Tools.
+    Incluye: for, while, break, continue, range().
+    https://docs.python.org/3/tutorial/controlflow.html
+    4) Python Software Foundation. (2024). range — Sequence of numbers.
+    https://docs.python.org/3/library/functions.html#func-range
+    5) Python For Loops-https://www.w3schools.com/python/python_for_loops.asp
 """
 
 """
     REPOSITORIO GIT HUB:
-
+    https://github.com/Paulo-ram/homework_charly-
 """

@@ -53,13 +53,32 @@ print("---------------FIRST PROBLEM-------------------")
     - booleano = is_high_temperature 
 
     Validations:
-    - 
+    - full_name no debe estar vacío después de strip().
+    - Debe contener al menos dos palabras (por ejemplo, nombre y apellido).
+    - No aceptar cadenas que sean solo espacios.
+
 
     Test cases:
     1) Normal: 
-    2) Border: 
-    3) Error: 
+    Enter temperature in Celsius: 25
 
+
+    Fahrenheit: 77.0
+    Kelvin: 298.15
+    High temperature: false
+
+    2) Border: 
+    Enter temperature in Celsius: -273.15
+
+    Fahrenheit: -459.66999999999996
+    Kelvin: 0.0
+    High temperature: false
+
+    3) Error: 
+    Enter temperature in Celsius: -300
+
+    Error: invalid input
+    
 """
 # TEMPS IN FLOAT 
 try:
@@ -101,12 +120,35 @@ print("---------------SECOND PROBLEM-------------------")
     - total_pay 
 
     Validations:
-    - 
+    - email_text no vacío tras strip().
+    - Contar cuántas veces aparece '@'.
+    - Verificar que no haya espacios (no debe haber " " en email_text).
+
 
     Test cases:
     1) Normal: 
+    Enter worked hours: 45
+    Enter hourly rate: 100
+
+    Regular pay: 4000.0
+    Overtime pay: 750.0
+    Total pay: 4750.0
+    Has overtime: true
+
     2) Border: 
+    Enter worked hours: 40
+    Enter hourly rate: 120
+
+    Regular pay: 4800.0
+    Overtime pay: 0.0
+    Total pay: 4800.0
+    Has overtime: false
+
     3) Error: 
+    Enter worked hours: -5
+    Enter hourly rate: 100
+
+    Error: invalid input
 
 """
 # HOURS IN FLOAT AND THE RATE 
@@ -152,14 +194,32 @@ print("---------------THIRD PROBLEM-------------------")
     - final_total 
 
     Validations:
-    - 
+    - phrase no vacía tras strip().
+    - Longitud mínima razonable después de limpiar espacios (por ejemplo, al menos 3 caracteres).
 
     Test cases:
     1) Normal: 
+    Enter purchase total: 500
+    Is the customer a student? (YES/NO): YES
+    Is the customer a senior? (YES/NO): NO
+
+    Discount eligible: true
+    Final total: 450.0
 
     2) Border: 
-    
+    Enter purchase total: 1000
+    Is the customer a student? (YES/NO): NO
+    Is the customer a senior? (YES/NO): NO
+
+    Discount eligible: true
+    Final total: 900.0
+
     3) Error: 
+    Enter purchase total: abc
+    Is the customer a student? (YES/NO): YES
+    Is the customer a senior? (YES/NO): NO
+
+    Error: invalid input
 
 """
 
@@ -217,13 +277,39 @@ print("---------------FOURTH PROBLEM-------------------")
     - all_evem
 
     Validations:
-    - 
+    - Verificar que los tres valores se puedan convertir a int.
+    - No se requieren restricciones adicionales (se permiten negativos).
 
     Test cases:
     1) Normal: 
-    2) Border: 
-    3) Error: 
+    Enter integer 1: 4
+    Enter integer 2: 10
+    Enter integer 3: 6
 
+    Sum: 20
+    Average: 6.666666666666667
+    Max: 10
+    Min: 4
+    All even: true
+
+    2) Border: 
+    Enter integer 1: -1
+    Enter integer 2: 0
+    Enter integer 3: 2
+
+    Sum: 1
+    Average: 0.3333333333333333
+    Max: 2
+    Min: -1
+    All even: false
+
+    3) Error: 
+    Enter integer 1: a
+    Enter integer 2: 5
+    Enter integer 3: 6
+
+    Error: invalid input
+    
 """
 # NUMBERS INT 
 try:
@@ -268,13 +354,34 @@ print("---------------FIFTH PROBLEM-------------------")
     - eligible 
 
     Validations:
-    - 
+    - monthly_income > 0.0 (evitar división entre cero).
+    - monthly_debt >= 0.0
+    - credit_score >= 0
+    - Si no se cumple, mostrar "Error: invalid input".
 
     Test cases:
-    1) Normal: 
-    2) Border: 
-    3) Error: 
+    1) Normal:
+    Enter monthly income: 10000
+    Enter monthly debt: 3000
+    Enter credit score: 700
 
+    Debt ratio: 0.3
+    Eligible: true
+
+    2) Border:
+    Enter monthly income: 8000
+    Enter monthly debt: 3500
+    Enter credit score: 640
+
+    Debt ratio: 0.4375
+    Eligible: false
+ 
+    3) Error: 
+    Enter monthly income: -5000
+    Enter monthly debt: 2000
+    Enter credit score: 700
+
+    Error: invalid input    
 """
 # BECOME THE INPUTS FLOATS OR INT 
 try:
@@ -321,15 +428,34 @@ print("---------------SIXTH PROBLEM-------------------")
             )
 
     Validations:
-    - 
+    - weight_kg > 0.0
+    - height_m > 0.0
+    - Si no se cumple, mostrar "Error: invalid input".
 
     Test cases:
     1) Normal: 
-    
-    2) Border: 
-    
-    3) Error: 
+    Enter weight in kg: 70
+    Enter height in meters: 1.75
 
+    BMI: 22.86
+    Underweight: false
+    Normal: true
+    Overweight: false
+
+    2) Border: 
+    Enter weight in kg: 50
+    Enter height in meters: 1.70
+    
+    BMI: 17.3
+    Underweight: true
+    Normal: false
+    Overweight: false
+
+    3) Error: 
+    Enter weight in kg: -10
+    Enter height in meters: 1.75
+
+    Error: invalid input
 """
 
 try:
@@ -370,15 +496,20 @@ else:
 
 """
     REFRENCIAS:
-    1) 
-    2) 
-    3) 
-    4) 
-    5) 
+    1) Python Software Foundation. (2024). Numeric Types — int, float, complex.
+    https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex
+    2) Python Software Foundation. (2024). math — Mathematical functions.
+    https://docs.python.org/3/library/math.html
+    3) Python Software Foundation. (2024). random — Generate pseudo-random numbers.
+    https://docs.python.org/3/library/random.html
+    4) Python Software Foundation. (2024). decimal — Decimal fixed point arithmetic.
+    https://docs.python.org/3/library/decimal.html
+    5) Python Software Foundation. (2024). fractions — Rational numbers.
+    https://docs.python.org/3/library/fractions.html
 
 """
 
 """
     REPOSITORIO GIT HUB:
-
+    https://github.com/Paulo-ram/homework_charly-
 """
