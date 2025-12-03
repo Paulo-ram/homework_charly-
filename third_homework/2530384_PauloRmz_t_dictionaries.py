@@ -199,19 +199,19 @@ try:
     y1 = float(input("Enter y1: "))
     x2 = float(input("Enter x2: "))
     y2 = float(input("Enter y2: "))
-
+# Create tuples
     point_a = (x1, y1)
     point_b = (x2, y2)
 
     distance = ((x2 - x1)**2 + (y2 - y1)**2)**0.5
 
     midpoint = ((x1 + x2)/2, (y1 + y2)/2)
-
+    # Output
     print("Point A:", point_a)
     print("Point B:", point_b)
     print("Distance:", distance)
     print("Midpoint:", midpoint)
-
+    # print error 
 except ValueError:
     print("Error: Invalid numeric input.")
 
@@ -267,12 +267,13 @@ print("---------------THIRD PROBLEM-------------------")
     Error: product not found
 
 """
+# Create product catalog
 product_prices = {"coke": 15.0, "eggs": 25.0, "chip's": 35.0}
-
+# Read inputs
 product_name = input("Enter product name (coke, eggs or chip's): ").strip()
 quantity_input = input("Enter quantity: ")
 
-try:
+try: # Convert quantity to int
     quantity = int(quantity_input)
 
     if product_name == "":
@@ -283,13 +284,13 @@ try:
         if product_name in product_prices:
             unit_price = product_prices[product_name]
             total_price = unit_price * quantity
-
+            # Output
             print("Unit price:", unit_price)
             print("Quantity:", quantity)
             print("Total:", total_price)
         else:
             print("Error: product not found")
-
+        # print error
 except ValueError:
     print("Error: quantity must be a number.")
 
@@ -337,12 +338,12 @@ print("---------------FOURTH PROBLEM-------------------")
 
     Error: student not found
 """
-
+# Create student grades dictionary
 student_grades = {"yomerito": [95.0, 85.0, 92.0], "geragod": [100.0, 98.0, 80.0],
 "vitor": [55.0, 65.0, 50.0]}
 
 student_name = input("Enter student name (yomerito, geragod, vitor): ").strip().lower()
-
+ # Validate student name
 if student_name == "":
     print("Error: no student name")
 else:
@@ -354,7 +355,7 @@ else:
         else:
             average = sum(grades_list) / len(grades_list)
             is_passed = average >= 70.0
-
+            # Output
             print("Grades:", grades_list)
             print("Average:", average)
             print("Passed:", is_passed)
@@ -406,7 +407,7 @@ print("---------------FIFTH PROBLEM-------------------")
 """
 
 sentence = input("Enter a sentence: ").strip()
-
+# Validate sentence
 if sentence == "":
     print("Error: there isn't a sentence.")
 else:
@@ -415,7 +416,7 @@ else:
     clean_text = clean_text.replace(",", "")
     clean_text = clean_text.replace("!", "")
     clean_text = clean_text.replace("?", "")
-
+ # Split into words
     words_list = clean_text.split()
 
     if len(words_list) == 0:
@@ -437,7 +438,7 @@ else:
             if freq_dict[word] > highest_count:
                 highest_count = freq_dict[word]
                 most_common_word = word
-
+        # Output
         print("Words list:", words_list)
         print("Frequencies:", freq_dict)
         print("Most common word:", most_common_word)
@@ -487,7 +488,7 @@ print("---------------SIXTH PROBLEM-------------------")
 
     Error: invalid action.
 """
-
+# Create contact book dictionary
 contacts = {
     "AMLO": "8345625310",
     "Juniorh": "8346569217",
@@ -495,7 +496,7 @@ contacts = {
 }
 
 action_text = input("Enter action (ADD, SEARCH, DELETE): ").strip().upper()
-
+# Validate action
 if action_text not in ["ADD", "SEARCH", "DELETE"]:
     print("Error: invalid action.")
 else:
@@ -518,7 +519,7 @@ else:
                 print("Phone:", contacts[name])
             else:
                 print("Error: contact not found")
-
+  
         elif action_text == "DELETE":
             if name in contacts:
                 contacts.pop(name)

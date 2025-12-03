@@ -75,9 +75,9 @@ print("---------------FIRST PROBLEM-------------------")
 
     Error: invalid input
 """
-
+# Input
 n_input = input("Enter n: ")
-
+# Validate n
 try:
     n = int(n_input)
     if n < 1:
@@ -91,7 +91,7 @@ try:
 
             if i % 2 == 0:
                 even_sum = even_sum + i
-
+         # Output
         print("Sum 1..n:", total_sum)
         print("Even sum 1..n:", even_sum)
 except ValueError:
@@ -141,16 +141,16 @@ print("---------------SECOND PROBLEM-------------------")
 
     Error: invalid input
 """
-
+# Inputs
 base_input = input("Enter base: ")
 m_input = input("Enter limit m: ")
-
+# Validate inputs
 try:
     base = int(base_input)
     m = int(m_input)
     if m < 1:
         print("Error: invalid input")
-  
+   # Print multiplication table
     for i in range(1, m + 1):
         result = base * i
         print(f"{base} x {i} = {result}")
@@ -200,11 +200,11 @@ print("---------------THIRD PROBLEM-------------------")
 
     Error: invalid input
 """
-
+#  Define sentinel value
 SENTINEL = -7
 count = 0
 total = 0.0
-
+ # Input loop
 while True:
     value_input = input("Enter number (-7 to stop): ")
 
@@ -218,7 +218,7 @@ while True:
         break  
     total += number
     count += 1
-
+# Calculate and output average
 if count == 0:
     print("Error: no data")
 else:
@@ -269,13 +269,13 @@ print("---------------FOURTH PROBLEM-------------------")
 
     Account locked
 """
-
+# Define correct password and max attempts
 CORRECT_PASSWORD = "Thepapus"
 MAX_ATTEMPTS = 4
 
 attempts = 0
 success = False
-
+  # Password attempt loop
 while attempts < MAX_ATTEMPTS:
     password = input("Enter password: ")
 
@@ -338,7 +338,7 @@ print("---------------FIFTH PROBLEM-------------------")
 """
 
 counter = 0
-
+ # Menu loop
 while True:
     print("1) Show greeting")
     print("2) Show current counter value")
@@ -352,7 +352,7 @@ while True:
     except:
         print("Error: invalid option")
         continue
-
+   # Process option
     if option == 1:
         print("Hi!")
     elif option == 2:
@@ -412,7 +412,7 @@ print("---------------SIXTH PROBLEM-------------------")
 """
 
 n_input = input("Enter n: ")
-
+ # Validate n
 try:
     n = int(n_input)
 except:
@@ -422,7 +422,7 @@ except:
 if n < 1:
     print("Error: invalid input")
     exit()
-
+   # Print pattern
 for i in range(1, n + 1):
     line = ""
     for j in range(i):

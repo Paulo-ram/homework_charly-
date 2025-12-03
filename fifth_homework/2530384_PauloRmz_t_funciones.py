@@ -80,7 +80,7 @@ print("---------------FIRST PROBLEM-------------------")
     0 cant be a data
 
 """
-
+# Define calculate_area and calculate_perimeter functions
 def calculate_area (width, height):
     return width* height
 def calculate_perimeter (width, height):
@@ -88,12 +88,12 @@ def calculate_perimeter (width, height):
 
 width = 0
 height = 0
-
+# Input
 try:
     width= float(input("Put width:"))
     height= float(input("Put height:"))
     if width>0 and height >0:
-        try:
+        try:   # Call functions and output results
             area = calculate_area(width, height)
             perimeter = calculate_perimeter(width, height)
             print(f"area: {area}")
@@ -148,7 +148,7 @@ print("---------------SECOND PROBLEM-------------------")
     # Output esperado:
     Error: invalid input
 """
-
+# Define classify_grade function
 def classify_grade(score):
     if score >= 90:
         return "A"
@@ -163,7 +163,7 @@ def classify_grade(score):
 
 try:
     score = float(input("Enter score (0-100): "))
-
+      # Validate score
     if 0 <= score <= 100:
         grade = classify_grade(score)
         print(f"Score: {score}")
@@ -217,7 +217,7 @@ print("---------------THIRD PROBLEM-------------------")
 
     Error: invalid input
 """
-
+# Define summarize_numbers function
 def summarize_numbers(numbers_list):
     stats = {
         "min": min(numbers_list),
@@ -231,7 +231,7 @@ numbers_text = input("Enter numbers separated by commas: ")
 
 if numbers_text.strip() == "":
     print("Error: invalid input")
-else:
+else:   # Convert input to list of numbers
     try:
         parts = numbers_text.split(",")
         numbers_list = []
@@ -242,7 +242,7 @@ else:
 
         if len(numbers_list) == 0:
             print("Error: invalid input")
-        else:
+        else:   # Call summarize_numbers and output results
             stats = summarize_numbers(numbers_list)
             print(f"Min: {stats['min']}")
             print(f"Max: {stats['max']}")
@@ -293,7 +293,7 @@ print("---------------FOURTH PROBLEM-------------------")
 
     Error: invalid input
 """
-
+# Define apply_discount function
 def apply_discount(prices_list, discount_rate):
     discounted = []
     for price in prices_list:
@@ -306,7 +306,7 @@ discount_text = input("Enter discount rate (0 to 1): ")
 
 if prices_text.strip() == "":
     print("Error: invalid input")
-else:
+else:  # Validate discount rate and prices
     try:
         discount_rate = float(discount_text)
 
@@ -326,7 +326,7 @@ else:
                 print("Error: invalid input")
             else:
                 discounted = apply_discount(prices_list, discount_rate)
-
+                # Output
                 print(f"Original prices: {prices_list}")
                 print(f"Discounted prices: {discounted}")
 
@@ -372,7 +372,7 @@ print("---------------FIFTH PROBLEM-------------------")
 
     Error: invalid input
 """
-
+# Define greet function
 def greet(name, title=""):
     name = name.strip()
     title = title.strip()
@@ -386,12 +386,12 @@ def greet(name, title=""):
 
 name_input = input("Enter name: ").strip()
 title_input = input("Enter title (optional): ").strip()
-
+ # Validate name
 if name_input == "":
     print("Error: invalid input")
 else:
     greeting_message = greet(name_input, title_input)
-
+    # Output greeting
     print(f"Greeting: {greeting_message}")
 
 print("---------------SIXTH PROBLEM-------------------")
@@ -434,21 +434,21 @@ print("---------------SIXTH PROBLEM-------------------")
 
     Error: invalid input
 """
-
+ # Iterative approach to calculate factorial
 def factorial(n):
     result = 1
     for i in range(1, n + 1):
         result *= i
     return result
-
+  # Input
 value_text = input("Enter n: ")
-
+ # Validate n
 try:
     n = int(value_text)
 
     if n < 0 or n > 20:
         print("Error: invalid input")
-    else:
+    else:   # Calculate and output factorial
         result = factorial(n)
         print(f"n: {n}")
         print(f"Factorial: {result}")
