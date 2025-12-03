@@ -64,7 +64,7 @@ print("---------------FIBONACCI SERIES-------------------")
     <class 'ValueError'>
 
 """
-
+# Fibonacci series calculation
 print("Welcome to the fibonacci sequence")
 try: 
     num = int(input("How many values do you want?: "))
@@ -72,7 +72,8 @@ try:
         a = 0
         b = 1
         sum = 0 
-        count = 1
+        count = 1 
+        # print fibonacci series
         print("This is the fibonacci serie")
         while(count<=num):
             print(sum)
