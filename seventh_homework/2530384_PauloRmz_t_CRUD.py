@@ -19,24 +19,129 @@
 
 print("---------------CRUD PROBLEM-------------------")
 """
-    PROBLEM : CRUD manager using dictionaries and/or lists with functions.
-    Description: 
+    Problem: In-memory CRUD manager with functions  
+
+    Descripción:
+    Se debe de realizar el CRUD (Create, Read, Update, Delete) utilizando funciones y un diccionario o lista de diccionarios 
+    para almacenar los datos en memoria. El programa debe permitir al usuario crear, leer, actualizar y eliminar elementos, 
+    así como listar todos los elementos almacenados. Se debe implementar un menú principal para seleccionar las operaciones.
     
     Inputs:
-    - 
+
+    - User menu options (string or int).
+    - For CREATE/UPDATE: item_id, name, price, quantity (or the fields you define).
+    - For READ/DELETE: item_id.
 
     Outputs:
-    - 
+    
+    - Messages indicating the result of each operation:
+    - "Item created", "Item updated", "Item deleted", "Item not found", "Items list:", etc.
 
     Validations:
-    - 
+    - Menu option must be valid (for example, 0..4 o 0..5 según tu diseño).
+    - item_id must not be empty.
+    - Numeric fields must be valid numbers and greater than or equal to 0.
+    - Disallow creating an item with an id that is already in use (or document tu decisión).
+    - For READ/UPDATE/DELETE, if the id does not exist, show "Item not found".
 
     Test cases:
-    1) Normal: 
-    2) Border: 
-    3) Error: 
+    1) Normal: create an item, read it, update it, delete it → expected messages and final state.
+    2) Border: attempt to create item with minimal valid data (e.g., quantity = 0) o usar un id muy corto/largo (documenta tus reglas).
+    3) Error: use invalid menu option, invalid id (empty), or non-numeric price → expected error messages.
 
 """
+
+# ----------- FUNCIONES CRUD -----------
+
+def create_item(data, item_id, name, price, quantity):
+    if item_id in data:
+        return False
+    data[item_id] = {"name": name, "price": price, "quantity": quantity}
+    return True
+
+def read_item(data, item_id):
+    return data.get(item_id)
+
+def update_item(data, item_id, name, price, quantity):
+    if item_id not in data:
+        return False
+    data[item_id] = {"name": name, "price": price, "quantity": quantity}
+    return True
+
+def delete_item(data, item_id):
+    return data.pop(item_id, None) is not None
+
+def list_items(data):
+    if not data:
+        print("There are no items.")
+    else:
+        for i, d in data.items():
+            print(f"ID: {i} | {d}")
+
+# VALIDATIONS 
+
+def val_float(v):
+    try: v=float(v); return v if v>=0 else None
+    except: return None
+
+def val_int(v):
+    try: v=int(v); return v if v>=0 else None
+    except: return None
+
+# PRINCIPAL MENU 
+
+print("Welcome to the HEB packet page") 
+
+def main():
+    items = {}
+    while True:
+        print("\n1) Create  2) Read  3) Update 4) Delete 5) List 0) Exit")
+        op = input("Choose your option: ").strip()
+
+        if op == "0":
+            print("LEAVING..."); break
+        
+        if op not in {"1","2","3","4","5"}:
+            print("Error: invalid input"); continue
+
+        if op == "1":  # CREATE
+            item_id = input("ID: ").strip()
+            if not item_id: print("Error: invalid input"); continue
+            name = input("Name: ")
+            price = val_float(input("Price: "))
+            qty = val_int(input("Quantity: "))
+            if price is None or qty is None:
+                print("Error: invalid input"); continue
+            print("Item created" if create_item(items, item_id, name, price, qty)
+                  else "Error: ID already exists")
+
+        elif op == "2":  # READ
+            item = read_item(items, input("ID: ").strip())
+            print(item if item else "Item not found")
+
+        elif op == "3":  # UPDATE
+            item_id = input("ID: ").strip()
+            if item_id not in items:
+                print("Item not found"); continue
+            name = input("New name: ")
+            price = val_float(input("New price: "))
+            qty = val_int(input("New quantity: "))
+            if price is None or qty is None:
+                print("Error: invalid input"); continue
+            update_item(items, item_id, name, price, qty)
+            print("Item updated")
+
+        elif op == "4":  # DELETE
+            print("Item deleted" if delete_item(items, input("ID: ").strip())
+                  else "Item not found")
+
+        elif op == "5":  # LIST
+            print("Items list:")
+            list_items(items)
+            print("End of list")
+
+if __name__ == "__main__":
+    main()
 
 
 """
