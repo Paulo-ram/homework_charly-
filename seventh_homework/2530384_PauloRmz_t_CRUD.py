@@ -28,26 +28,80 @@ print("---------------CRUD PROBLEM-------------------")
     
     Inputs:
 
-    - User menu options (string or int).
-    - For CREATE/UPDATE: item_id, name, price, quantity (or the fields you define).
-    - For READ/DELETE: item_id.
+    - options
+    - item_id 
+    - name
+    - price 
+    - quantity
 
     Outputs:
     
-    - Messages indicating the result of each operation:
-    - "Item created", "Item updated", "Item deleted", "Item not found", "Items list:", etc.
+    - Confirmation messages for each operation (e.g., "Item created", "Item updated", "Item deleted").
+    - Error messages for invalid inputs (e.g., "Error: invalid input", "Item not found").
+    - List of all items when requested.
 
     Validations:
-    - Menu option must be valid (for example, 0..4 o 0..5 según tu diseño).
-    - item_id must not be empty.
+    - Menu option must be valid (1-5, 0 to exit).
+    - item_id must not be empty. 
     - Numeric fields must be valid numbers and greater than or equal to 0.
     - Disallow creating an item with an id that is already in use (or document tu decisión).
     - For READ/UPDATE/DELETE, if the id does not exist, show "Item not found".
 
     Test cases:
-    1) Normal: create an item, read it, update it, delete it → expected messages and final state.
-    2) Border: attempt to create item with minimal valid data (e.g., quantity = 0) o usar un id muy corto/largo (documenta tus reglas).
-    3) Error: use invalid menu option, invalid id (empty), or non-numeric price → expected error messages.
+    1) Normal: 
+
+    1) Create  2) Read  3) Update 4) Delete 5) List 0) Exit
+    Choose your option: 1 
+    ID: 142536
+    Name: Milk
+    Price: 12.5
+    Quantity: 1
+    Item created
+
+    1) Create  2) Read  3) Update 4) Delete 5) List 0) Exit
+    Choose your option: 2
+    ID: 142536
+    {'name': 'Milk', 'price': 12.5, 'quantity': 1}
+
+    1) Create  2) Read  3) Update 4) Delete 5) List 0) Exit
+    Choose your option: 4
+    ID: 142536
+    Item deleted
+
+    2) Border: 
+    
+    1) Create  2) Read  3) Update 4) Delete 5) List 0) Exit
+    Choose your option: 1
+    ID: a
+    Name: Bread 
+    Price: 15.5
+    Quantity: 2
+
+    Item created
+
+    1) Create  2) Read  3) Update 4) Delete 5) List 0) Exit
+    Choose your option: 1
+
+    ID: A1
+    Name: Water
+    Price: 10
+    Quantity: 0
+
+    Item created
+
+    3) Error: 
+
+    1) Create  2) Read  3) Update 4) Delete 5) List 0) Exit
+    Choose your option: 6
+    Error: invalid input
+
+    1) Create  2) Read  3) Update 4) Delete 5) List 0) Exit
+    Choose your option: 1
+    ID: 14
+    Name: qa
+    Price: awe
+    Quantity: q
+    Error: invalid input
 
 """
 
@@ -96,46 +150,46 @@ def main():
     items = {}
     while True:
         print("\n1) Create  2) Read  3) Update 4) Delete 5) List 0) Exit")
-        op = input("Choose your option: ").strip()
+        option = input("Choose your option: ").strip()
 
-        if op == "0":
+        if option == "0":
             print("LEAVING..."); break
         
-        if op not in {"1","2","3","4","5"}:
+        if option not in {"1","2","3","4","5"}:
             print("Error: invalid input"); continue
 
-        if op == "1":  # CREATE
+        if option == "1":  # CREATE
             item_id = input("ID: ").strip()
             if not item_id: print("Error: invalid input"); continue
             name = input("Name: ")
             price = val_float(input("Price: "))
-            qty = val_int(input("Quantity: "))
-            if price is None or qty is None:
+            quantity = val_int(input("Quantity: "))
+            if price is None or quantity is None:
                 print("Error: invalid input"); continue
-            print("Item created" if create_item(items, item_id, name, price, qty)
+            print("Item created" if create_item(items, item_id, name, price, quantity)
                   else "Error: ID already exists")
 
-        elif op == "2":  # READ
+        elif option == "2":  # READ
             item = read_item(items, input("ID: ").strip())
             print(item if item else "Item not found")
 
-        elif op == "3":  # UPDATE
+        elif option == "3":  # UPDATE
             item_id = input("ID: ").strip()
             if item_id not in items:
                 print("Item not found"); continue
             name = input("New name: ")
             price = val_float(input("New price: "))
-            qty = val_int(input("New quantity: "))
-            if price is None or qty is None:
+            quantity = val_int(input("New quantity: "))
+            if price is None or quantity is None:
                 print("Error: invalid input"); continue
-            update_item(items, item_id, name, price, qty)
+            update_item(items, item_id, name, price, quantity)
             print("Item updated")
 
-        elif op == "4":  # DELETE
+        elif option == "4":  # DELETE
             print("Item deleted" if delete_item(items, input("ID: ").strip())
                   else "Item not found")
 
-        elif op == "5":  # LIST
+        elif option == "5":  # LIST
             print("Items list:")
             list_items(items)
             print("End of list")
